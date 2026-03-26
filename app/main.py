@@ -49,7 +49,7 @@ async def add_security_headers(request: Request, call_next):
 # Restrict to trusted hosts only - Prevent Host header attacks
 app.add_middleware(
     TrustedHostMiddleware,
-    allowed_hosts=["127.0.0.1", "localhost"]
+    allowed_hosts=["*"]
 )
 
 # CORS - Restrict to localhost only (prevent unauthorized cross-origin requests)
